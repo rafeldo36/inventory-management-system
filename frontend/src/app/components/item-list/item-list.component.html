@@ -1,0 +1,12 @@
+<app-item-form (itemAdded)="onItemAdded()"></app-item-form>
+<ul class="item-list">
+    <li *ngFor="let item of items" class="item">
+        <span class="item-name">{{ item.name }}</span>
+        <span class="item-quantity">Quantity: {{ item.quantity }} {{ item.unit }}</span>
+        <span class="item-price">Price: ₹{{ item.price }}</span>
+        <button (click)="deleteItem(item._id)" class="delete-button">Delete</button>
+    </li>
+</ul>
+<div class="total-price">
+    <h3>Total Price: ₹{{ totalPrice }}</h3>
+</div>
